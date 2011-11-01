@@ -1,0 +1,59 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <f:entry title="${%entry.title}"
+           description="${%includes.description}">
+    <f:textbox name="codecover.includes" value="${instance.includes}"/>
+  </f:entry>
+    <f:entry title="${%Health reporting}"
+             description="${%thresholds.description(rootURL)}">
+        <table>
+            <thead>
+                <tr>
+                    <td width="20%"></td>
+                    <td width="20%">${%Statement}</td>
+                    <td width="20%">${%Branch}</td>
+                    <td width="20%">${%Loop}</td>
+                    <td width="20%">${%Condition}</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>
+                        <img src="${rootURL}/images/16x16/health-80plus.gif" alt="100%"
+                             title="${%health.100.title}"/>
+                    </th>
+                    <td>
+                        <f:textbox name="codecoverHealthReports.maxStatement" value="${instance.healthReports.maxStatement}" />
+                    </td>
+                    <td>
+                        <f:textbox name="codecoverHealthReports.maxBranch" value="${instance.healthReports.maxBranch}" />
+                    </td>
+                    <td>
+                        <f:textbox name="codecoverHealthReports.maxLoop" value="${instance.healthReports.maxLoop}" />
+                    </td>
+                    <td>
+                        <f:textbox name="codecoverHealthReports.maxCondition" value="${instance.healthReports.maxCondition}" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <img src="${rootURL}/images/16x16/health-00to19.gif" alt="0%"
+                             title="${%health.0.title}"/>
+                    </th>
+                    <td>
+                        <f:textbox name="codecoverHealthReports.minStatement" value="${instance.healthReports.minStatement}" />
+                    </td>
+                    <td>
+                        <f:textbox name="codecoverHealthReports.minBranch" value="${instance.healthReports.minBranch}" />
+                    </td>
+                    <td>
+                        <f:textbox name="codecoverHealthReports.minLoop" value="${instance.healthReports.minLoop}" />
+                    </td>
+                    <td>
+                        <f:textbox name="codecoverHealthReports.minCondition" value="${instance.healthReports.minCondition}" />
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </f:entry>
+</j:jelly>

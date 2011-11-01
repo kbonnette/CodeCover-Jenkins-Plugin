@@ -1,0 +1,13 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:e="/hudson/plugins/codecover/tags">
+ <j:if test="${it.hasChildren()}">
+  <tr>
+    <th>${%name}</th>
+    <j:if test="${it.hasChildrenStatementCoverage()}">
+      <th>${%statement}</th>
+    </j:if>
+    <th>${%branch}</th>
+    <th>${%loop}</th>
+    <th>${%condition}</th>
+  </tr>
+ </j:if>  
+</j:jelly>
